@@ -1,3 +1,3 @@
 app.controller('ctrlDash', ['$scope', function($scope){
-	$scope.teste = "Aramis";
+	$scope.cliDia = 15;
 }]);
