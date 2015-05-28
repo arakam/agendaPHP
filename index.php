@@ -34,9 +34,11 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 
+
+
 	</head>
 
-	<body>
+	<body ng-app="app">
 		
 		
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -54,16 +56,16 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							<a href="#">Dashboard</a>
+							<a href="#/">Dashboard</a>
 						</li>
 						<li>
-							<a href="#">Clientes</a>
+							<a href="#/clientes">Clientes</a>
 						</li>						
 						<li>
-							<a href="#">Agenda</a>
+							<a href="#/agenda">Agenda</a>
 						</li>
 						<li>
-							<a href="#">Sair</a>
+							<a href="#/">Sair</a>
 						</li>
 					</ul>
 					<form class="navbar-form navbar-right" role="search">
@@ -79,12 +81,13 @@
 
 			<div class="container">
 				<div class="row clearfix">
-					<div class="col-md-12 column">
-						<p>Conteudo</p>
+					<div class="col-md-12 column" ng-view>
+
+						
 					</div>
 				</div>
 			</div>
-			
+
 			<footer class="footer">
 				<div class="container	">
 
@@ -100,12 +103,15 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+		<script src="js/app.js"></script>
+
+		<!-- Controllers -->
+		<script src="app/controllers/ctrlPrincipal.js"></script> 
+		<script src="app/controllers/ctrlDash.js"></script> 
+		<script src="app/controllers/ctrlClientes.js"></script> 
+		<script src="app/controllers/ctrlAgenda.js"></script> 
 
 	</body>
 
 </html>
-
-
-
-
-
