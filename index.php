@@ -30,7 +30,7 @@
 	$t = new classTeste();
 	$t->nome();
 	
-	echo "Porra funfa";
+	
 
 
 ?>
