@@ -32,6 +32,7 @@
 
 		<!-- Arquivos CSS -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link href="css/style.css" rel="stylesheet">
 
 
@@ -41,7 +42,7 @@
 	<body ng-app="app">
 		
 		
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 				<div class="container">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
