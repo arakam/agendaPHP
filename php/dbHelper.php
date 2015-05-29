@@ -15,6 +15,35 @@ class dbHelper {
             exit;
         }
     }
+
+    function selectClientes($table, $columns, $where){
+        try{
+            $a = array();
+            $w = "";
+            foreach ($where as $key => $value) {
+                $w .= " and " .$key. " like :".$key;
+                $a[":".$key] = $value;
+            }
+            $stmt = $this->db->prepare("select ".$columns." from ".$table." where 1=1 ". $w);
+            $stmt->execute($a);
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(count($rows)<=0){
+                $response["status"] = "warning";
+                $response["message"] = "Sem dados na Tabela.";
+            }else{
+                $response["status"] = "success";
+                $response["message"] = "Data selected from database";
+            }
+                $response["data"] = $rows;
+        }catch(PDOException $e){
+            $response["status"] = "error";
+            $response["message"] = 'Select Failed: ' .$e->getMessage();
+            $response["data"] = null;
+        }
+        echo json_encode($rows);
+
+    }
+
     function select($table, $columns, $where){
         try{
             $a = array();
@@ -28,7 +57,7 @@ class dbHelper {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if(count($rows)<=0){
                 $response["status"] = "warning";
-                $response["message"] = "No data found.";
+                $response["message"] = "Sem dados na Tabela.";
             }else{
                 $response["status"] = "success";
                 $response["message"] = "Data selected from database";
@@ -54,7 +83,7 @@ class dbHelper {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if(count($rows)<=0){
                 $response["status"] = "warning";
-                $response["message"] = "No data found.";
+                $response["message"] = "Sem dados na Tabela.";
             }else{
                 $response["status"] = "success";
                 $response["message"] = "Data selected from database";

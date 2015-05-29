@@ -1,1 +1,20 @@
-<h1>Clitenes</h1>
+    <table class="table table-striped">
+    	<tr ng-show="clientes.length==0">
+    		<td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;Sem dados na Tabela</td>
+    	</tr>
+
+    	<tr ng-hide="clientes.length>-1">
+    		<td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Carregando</td>
+    	</tr>    	
+
+    	<tr ng-repeat="c in clientes">
+
+    		<td>{{c.cli_codigo}}</td>
+    		<td>{{c.cli_nome}}</td>
+    		<td>{{c.cli_contato}}</td>
+    		<td>{{c.cli_fone}}</td>
+    		<td>{{c.cli_cgc}}</td>
+    		
+    	
+    	</tr>
+    </table>

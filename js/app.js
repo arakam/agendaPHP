@@ -1,5 +1,6 @@
 var app = angular.module('app', ['ngRoute']);
 
+// Faz o roteamento das paginas
 app.config(['$routeProvider',function($routeProvider){
 
 	//Removendo o # da url
@@ -25,3 +26,4 @@ app.config(['$routeProvider',function($routeProvider){
 		// se não achar nenhum deste vai para o principal
 		.otherwise({ redirectTo: '/'});
 }]);
+

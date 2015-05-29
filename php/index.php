@@ -16,9 +16,8 @@ $app->get('/',function (){
 
 $app->get('/clientes',  function() { 
     global $db;
-    $rows = $db->select("clientes","*",array());
-    // echo $rows;
-	echoResponse(200, $rows);
+    $rows = $db->selectClientes("clientes","*",array());
+    return $rows;
 });
 
 // POST route
@@ -57,18 +56,4 @@ $app->delete(
  * and returns the HTTP response to the HTTP client.
  */
 $app->run();
-
-function getConn()
-{
-	return new PDO('mysql:host=localhost;dbname=agenda','root','18052911',
-	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
-);
-
-}
-
-function getCategorias()
-{
-	$stmt = getConn()->query("SELECT * FROM clientes");
-	$categorias = $stmt->fetchAll(PDO::FETCH_OBJ);
-	echo "{categorias:".json_encode($categorias)."}";
-}
+?>
