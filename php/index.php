@@ -17,8 +17,8 @@ $app->get('/',function (){
 $app->get('/clientes',  function() { 
     global $db;
     $rows = $db->select("clientes","*",array());
-    echo $rows;
-	//echoResponse(200, $rows);
+    // echo $rows;
+	echoResponse(200, $rows);
 });
 
 // POST route
