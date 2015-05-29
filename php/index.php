@@ -14,6 +14,13 @@ $app->get('/',function (){
     }
 );
 
+// GET clients
+$app->get('/agenda',function (){
+        echo "Agenda";
+    }
+);
+
+// Seleciona todos os clientes 
 $app->get('/clientes',  function() { 
     global $db;
     $rows = $db->selectClientes("clientes","*",array());

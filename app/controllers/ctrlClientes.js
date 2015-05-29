@@ -5,9 +5,12 @@ app.controller("ctrlClientes", ['$scope','$http', function($scope, $http){
     function listaClientes(){
 		$http.get('php/clientes').success(function (data) {
 	    	$scope.clientes = data;
+
+
 	    	
 	    });
 	}
-	
+
+
 
 }]);
